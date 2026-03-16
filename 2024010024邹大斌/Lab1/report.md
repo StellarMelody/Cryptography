@@ -13,28 +13,41 @@
 3. 分析所有 25 种结果，识别出唯一符合英文语义的明文。
 
  四、实验结果
-- **正确密钥 k**：11
-- **解密后的明文**：KTZBSZJVSRGFJNDVKUVSFUOV
+- 正确密钥 k：20
+- 解密后的明文：TALKISCHEAPSHOWMETHECODE
 - **判断依据**：
-  遍历所有 25 个密钥后，仅 $k=11$ 对应的解密结果符合英文自然语言特征。其余密钥对应的结果均为无意义的随机字母组合，因此可确定 $k=11$ 为正确密钥。
+  遍历所有 25 个密钥后，仅 $k=20$ 对应的解密结果符合英文自然语言特征。其余密钥对应的结果均为无意义的随机字母组合，因此可确定 $k=20$ 为正确密钥。
 五、代码实现
-ciphertext = "NUFECMWBYUJMBIQGYNBYWIXY"
-
-def caesar_decrypt(cipher, k):
+def caesar_decrypt(ciphertext, shift):
+    """凯撒密码解密函数
+    :param ciphertext: 待解密密文
+    :param shift: 偏移量（密钥k）
+    :return: 解密后的明文
+    """
     plaintext = ""
-    for c in cipher:
-        if c.isalpha():
-            # 处理大写字母
-            if c.isupper():
-                plaintext += chr((ord(c) - ord('A') - k) % 26 + ord('A'))
-            # 处理小写字母（本实验中无小写，可保留兼容）
-            else:
-                plaintext += chr((ord(c) - ord('a') - k) % 26 + ord('a'))
+    for char in ciphertext:
+        if char.isalpha() and char.isupper():
+          
+            plaintext += chr((ord(char) - shift - ord('A')) % 26 + ord('A'))
         else:
-            plaintext += c
+            
+            plaintext += char
     return plaintext
 
-# 枚举所有可能的密钥（1~25）
-for k in range(1, 26):
-    plain = caesar_decrypt(ciphertext, k)
-    print(f"k={k} : {plain}")
+if __name__ == "__main__":
+    
+    cipher_text = "NUFECMWBYUJMBIQGYNBYWIXY"
+    
+    print("凯撒密码穷举解密结果（k=1~25）：")
+    print("=" * 60)
+    
+    
+    for k in range(1, 26):
+        decrypt_result = caesar_decrypt(cipher_text, k)
+        print(f"k={k:<2} : {decrypt_result}")
+    
+    print("=" * 60)
+   
+    print("✅ 正确破译结果：")
+    print(f"密钥k = 20")
+    print(f"明文 = {caesar_decrypt(cipher_text, 20)}")
