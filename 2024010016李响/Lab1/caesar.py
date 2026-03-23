@@ -16,7 +16,7 @@ def caesar_decrypt(ciphertext, key):
             plaintext.append(char)
     return ''.join(plaintext)
 
-# 待解密的密文（作业要求的正确密文）
+# 待解密的密文
 target_cipher = "NUFECMWBYUJMBIQGYNBYWIXY"
 
 # 穷举1~25密钥并输出
@@ -25,7 +25,7 @@ for k in range(1, 26):
     decrypt_result = caesar_decrypt(target_cipher, k)
     print(f"k={k:2d}  : {decrypt_result}")
 
-# 标注正确结果（修正为作业要求的k=20）
+# 标注正确结果
 correct_key = 20
 correct_plaintext = caesar_decrypt(target_cipher, correct_key)
 print("\n=== 正确解密结果 ===")
