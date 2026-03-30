@@ -34,7 +34,7 @@
 
 2. 最终明文结果
 
-The secret message is : When using a stream cipher, never use the key more than once.
+The secret message is : when using a stream cipher, never use the key more than once.
 
 
 五、实验结论
