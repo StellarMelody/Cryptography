@@ -28,8 +28,8 @@ def compute_hash_chain(file_path):
 
 if __name__ == "__main__":
     # 定义需要计算哈希链的两个视频文件路径
-    test_video_path = r"D:\Homework\cryptography\2024010005刘珈宁\Lab6\test.mp4"
-    intro_video_path = r"D:\Homework\cryptography\2024010005刘珈宁\Lab6\intro.mp4"
+    test_video_path = r"C:\Users\ws122\Videos\test.mp4"
+    intro_video_path = r"C:\Users\ws122\Videos\intro.mp4"
 
     # 计算并输出 test.mp4 的根哈希 h0
     print("=" * 50)
