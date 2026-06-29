@@ -15,7 +15,7 @@
 ---
 ## 第 3 题
 设 $(\operatorname{Gen}, E, D)$ 是一个选择密文安全的公钥加密系统，消息空间为 $\{0,1\}^{128}$。以下哪些系统也是选择密文安全的？
-- [ ] $(\operatorname{Gen}, E', D')$，其中
+- [x] $(\operatorname{Gen}, E', D')$，其中
   $$
   E'(pk, m) = E(pk, m \oplus 1^{128})
   $$
@@ -23,7 +23,7 @@
   $$
   D'(sk, c) = D(sk, c) \oplus 1^{128}
   $$
-- [x] $(\operatorname{Gen}, E', D')$，其中
+- [ ] $(\operatorname{Gen}, E', D')$，其中
   $$
   E'(pk, m) = (E(pk, m), 0^{128})
   $$
@@ -31,7 +31,7 @@
   $$
   D'(sk, (c_1, c_2)) = D(sk, c_1)
   $$
-- [x] $(\operatorname{Gen}, E', D')$，其中
+- [ ] $(\operatorname{Gen}, E', D')$，其中
   $$
   E'(pk, m) = (E(pk, m), E(pk, m))
   $$
@@ -39,7 +39,7 @@
   $$
   D'(sk, (c_1, c_2)) = D(sk, c_1)
   $$
-- [x] $(\operatorname{Gen}, E', D')$，其中
+- [ ] $(\operatorname{Gen}, E', D')$，其中
   $$
   E'(pk, m) = (E(pk, m), E(pk, m))
   $$
