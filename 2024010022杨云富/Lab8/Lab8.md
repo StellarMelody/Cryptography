@@ -1,6 +1,7 @@
 # 密码学 习题集 - 认证加密与高级加密构造
 
 ---
+
 ## 第 1 题
 
 攻击者截获了如下密文（十六进制编码）：
@@ -16,10 +17,11 @@
 修改后的密文：
 
 ```text
-20814804C1767293BD9F1D9cab3BC3E7AC1E37Bfb15599E5F40eEF805488281d
+20814804c1767293bd9f1d9cab3bc3e7ac1e37bfb15599e5f40eef805488281d
 ```
 
 ---
+
 ## 第 2 题
 
 设 $(E, D)$ 是一个加密系统，密钥空间为 $K$，消息空间为 $\{0,1\}^n$，密文空间为 $\{0,1\}^s$。假设 $(E, D)$ 提供认证加密。以下哪些系统也提供认证加密？（$\|$ 表示字符串拼接，可能有多个正确答案）
@@ -110,7 +112,7 @@ $$
 
 设 $F(k, x)$ 是一个输入空间为 $\{0,1\}^{256}$ 的安全 PRF。以下哪个构造在密钥 $k$ 从完整密钥空间 $\{0,1\}^{256}$ 均匀采样时是安全 PRF，但在密钥从上述非均匀分布采样时是不安全的？
 
-- [ ] 
+- [x] 
 
   $$
   F'(k, x) =
@@ -132,7 +134,7 @@ $$
 
 - [ ] $F'(k, x) = F(k, x)$
 
-- [ ] 
+- [x] 
 
   $$
   F'(k, x) =
@@ -312,8 +314,8 @@ SSH 协议面临一个安全攻击，该攻击利用了以下两个问题：
 
 你会如何重新设计 SSH 以抵抗这种攻击？
 
-- [x] 发送未加密但经过 MAC 认证的长度字段（Send the length field unencrypted (but MAC-ed)）
-- [x] 用 encrypt-then-MAC 替换 encrypt-and-MAC（Replace encrypt-and-MAC by encrypt-then-MAC）
+- [ ] 发送未加密但经过 MAC 认证的长度字段（Send the length field unencrypted (but MAC-ed)）
+- [ ] 用 encrypt-then-MAC 替换 encrypt-and-MAC（Replace encrypt-and-MAC by encrypt-then-MAC）
 - [x] 在长度字段后立即添加对 (seq-num, length) 的 MAC（Add a MAC of (seq-num, length) right after the len field）
 - [ ] 移除长度字段，通过每次接收一个字节后验证 MAC 来识别数据包边界（Remove the length field and identify packet boundary by verifying the MAC after every received byte）
 
@@ -347,3 +349,4 @@ $$
 - [ ] 无法实现（It can't be done）
 
 ---
+
